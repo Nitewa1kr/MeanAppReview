@@ -8,6 +8,8 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { PostsComponent } from './posts/posts.component';
 
+import { PostsService } from './posts.service';
+
 //Define the routes
 const ROUTES = [
   {
@@ -25,7 +27,7 @@ const ROUTES = [
   declarations: [ AppComponent, PostsComponent ],
   imports: [ BrowserModule, FormsModule, HttpModule, 
             RouterModule.forRoot(ROUTES) ],//add routes to the app
-  providers: [],//this is where your services going to be
-  bootstrap: [AppComponent]
+  providers: [ PostsService ],//this is where your services going to be
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }
